@@ -1,0 +1,15 @@
+[project]
+name = "sama-api"
+version = "0.1.0"
+description = "The backend of Sama downloader"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "anime-sama-api>=0.2.2",
+    "fastapi[standard]>=0.116.1",
+    "ruff>=0.12.11",
+    "uvicorn>=0.35.0",
+    "yt-dlp>=2025.8.27",
+]
+[project.scripts]
+sama = "run.py"
