@@ -3,6 +3,7 @@ from fastapi import APIRouter
 from fastapi.encoders import jsonable_encoder
 from src.service import downloader
 from pydantic import BaseModel
+import threading
 
 import config
 
@@ -27,7 +28,11 @@ async def download(episode: Episode):
     season = None
     season = seasons[episode.season_index]
     episodes = await season.episodes()
-    downloader.download(episodes[episode.episode_index], episode.language)
+    download_thread = threading.Thread(
+        target=downloader.download,
+        args=(episodes[episode.episode_index], episode.language),
+    )
+    download_thread.start()
     # for i in episodes_index:
     #     downloader.download(episodes[i], language)
     return {"response": "ok"}

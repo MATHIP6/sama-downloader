@@ -18,6 +18,7 @@ def download(episode: Episode, lang: Lang):
 
 
 def add_download_task(task: DownloadQueue):
+    download_tasks.append(task)
     player = task.episode.languages.availables[task.language][0][0]
     full_path = f"{download_path}/{task.episode.serie_name} - {task.episode.season_name} - {task.episode.name}"
 
