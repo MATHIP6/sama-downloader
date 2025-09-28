@@ -1,2 +1,2 @@
-url = "https://anime-sama.org/"
+url = "https://anime-sama.fr/"
 download_path = "/home/mathip/dev/python/sama-downloader/backend/out/"
