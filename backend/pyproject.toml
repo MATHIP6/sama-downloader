@@ -6,6 +6,8 @@ readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
     "anime-sama-api>=0.2.2",
+    "bs4>=0.0.2",
+    "cloudscraper>=1.2.71",
     "fastapi[standard]>=0.116.1",
     "ruff>=0.12.11",
     "uvicorn>=0.35.0",
